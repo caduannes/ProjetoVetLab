@@ -21,6 +21,10 @@ public class Fornecedor extends AbsPessoaJuridica{
         this.contatoEmail = contatoEmail;
     }
     
+    public Fornecedor(){
+        super();
+    }
+
     public Fornecedor(int codigo,
     String razaoSocial,
     String nomeFantasia,

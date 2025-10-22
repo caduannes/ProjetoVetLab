@@ -25,14 +25,14 @@ public class App{
             System.out.println("Matricula: "+ colaborador.getMatricula());
             System.out.println("Nome: "+ colaborador.getNome());
         }
-        FornecedorFakeDB db2 = new FornecedorFakeDB();
+        FornecedorFakeDB db3 = new FornecedorFakeDB();
         ArrayList<Fornecedor> fornecedores = db3.getInstancia();
             System.out.println("\n Fornecedores ");
         for (Fornecedor fornecedor : fornecedores) {
             System.out.println("Codigo: "+ fornecedor.getCodigo());
-            System.out.println("Razão Social: "+ fornecedor.getRazaoSocial);
-            System.out.println("Nome Fantasia: "+ fornecedor.getNomeFantasia);
-            System.out.println("Telefone para contato: "+ fornecedor.getContatoTel);
+            System.out.println("Razão Social: "+ fornecedor.getRazaoSocial());
+            System.out.println("Nome Fantasia: "+ fornecedor.getNomeFantasia());
+            System.out.println("Telefone para contato: "+ fornecedor.getContatoTel());
         }
     }
 }
