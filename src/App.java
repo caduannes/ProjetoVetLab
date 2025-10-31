@@ -4,23 +4,23 @@ import Dominio.Animal;
 import Dominio.Cliente;
 import Dominio.Colaborador;
 import Dominio.Fornecedor;
-import Repositorio.AnimalRepositorio;
-import Repositorio.ClienteRepositorio;
-import Repositorio.ColaboradorRepositorio;
+import Servico.AnimalServico;
+import Servico.ClienteServico;
+import Servico.ColaboradorServico;
 import Servico.FornecedorServico;
 
 public class App{
     public static void main(String[] args) throws Exception {
-        ClienteRepositorio repoCli = new ClienteRepositorio();
-        ArrayList<Cliente> clientes = repoCli.readAll();
+        ClienteServico srvCli = new ClienteServico();
+        ArrayList<Cliente> clientes = srvCli.browse();
             System.out.println("Clientes: ");
         for (Cliente cliente : clientes) {
             System.out.println("Codigo: "+ cliente.getCodigo());
             System.out.println("CPF: "+ cliente.getCpf());
             System.out.println("Email: "+ cliente.getEmail());
         }
-        ColaboradorRepositorio repoCol = new ColaboradorRepositorio();
-        ArrayList<Colaborador> colaboradores = repoCol.readAll();
+        ColaboradorServico srvCol = new ColaboradorServico();
+        ArrayList<Colaborador> colaboradores = srvCol.browse();
             System.out.println("Colaboradores: ");
         for (Colaborador colaborador : colaboradores) {
             System.out.println("Codigo: "+ colaborador.getCodigo());
@@ -36,8 +36,8 @@ public class App{
             System.out.println("Nome Fantasia: "+ fornecedor.getNomeFantasia());
             System.out.println("Telefone para contato: "+ fornecedor.getContatoTel());
         }
-        AnimalRepositorio repoAni = new AnimalRepositorio();
-        ArrayList<Animal> animais = repoAni.readAll();
+        AnimalServico srvAni = new AnimalServico();
+        ArrayList<Animal> animais = srvAni.browse();
             System.out.println("Animais: ");
         for (Animal animal : animais) {
             System.out.println("Codigo: "+ animal.getCodigo());
