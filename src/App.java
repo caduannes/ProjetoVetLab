@@ -1,13 +1,14 @@
-import java.util.ArrayList;
-
 import Dominio.Animal;
 import Dominio.Cliente;
 import Dominio.Colaborador;
 import Dominio.Fornecedor;
+import Dominio.Veterinario;
 import Servico.AnimalServico;
 import Servico.ClienteServico;
 import Servico.ColaboradorServico;
 import Servico.FornecedorServico;
+import Servico.VeterinarioServico;
+import java.util.ArrayList;
 
 public class App{
     public static void main(String[] args) throws Exception {
@@ -26,6 +27,7 @@ public class App{
             System.out.println("Codigo: "+ colaborador.getCodigo());
             System.out.println("Matricula: "+ colaborador.getMatricula());
             System.out.println("Nome: "+ colaborador.getNome());
+            System.out.println("CPF: "+ colaborador.getCpf());
         }
         FornecedorServico srvFor = new FornecedorServico();
         ArrayList<Fornecedor> fornecedores = srvFor.browse();
@@ -45,6 +47,15 @@ public class App{
             System.out.println("Especie: "+ animal.getEspecie());
             System.out.println("Raça: "+ animal.getRaca());
             
+        }
+        VeterinarioServico srvVet = new VeterinarioServico();
+        ArrayList<Veterinario> veterinarios = srvVet.browse();
+            System.out.println("Veterinários: ");
+        for (Veterinario veterinario : veterinarios) {
+            System.out.println("Codigo: "+ veterinario.getCodigo());
+            System.out.println("Nome: "+ veterinario.getNome());
+            System.out.println("RG: "+ veterinario.getRg());
+            System.out.println("CRMV: "+ veterinario.getRegCRMV());
         }
     }
 }
