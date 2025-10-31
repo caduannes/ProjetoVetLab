@@ -7,7 +7,7 @@ import Dominio.Fornecedor;
 import Repositorio.AnimalRepositorio;
 import Repositorio.ClienteRepositorio;
 import Repositorio.ColaboradorRepositorio;
-import Repositorio.FornecedorRepositorio;
+import Servico.FornecedorServico;
 
 public class App{
     public static void main(String[] args) throws Exception {
@@ -27,8 +27,8 @@ public class App{
             System.out.println("Matricula: "+ colaborador.getMatricula());
             System.out.println("Nome: "+ colaborador.getNome());
         }
-        FornecedorRepositorio repoFor = new FornecedorRepositorio();
-        ArrayList<Fornecedor> fornecedores = repoFor.readAll();
+        FornecedorServico srvFor = new FornecedorServico();
+        ArrayList<Fornecedor> fornecedores = srvFor.browse();
             System.out.println("Fornecedores: ");
         for (Fornecedor fornecedor : fornecedores) {
             System.out.println("Codigo: "+ fornecedor.getCodigo());

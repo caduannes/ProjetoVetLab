@@ -30,12 +30,8 @@ public class Animal extends AbsIdentificador{
     public LocalDate getDtNascimento() {
         return dtNascimento;
     }
-    public void setDtNascimento(String dtNascimento) {
-        if (dtNascimento == null || dtNascimento.isBlank()) {
-            this.dtNascimento = null;
-            return;
-            }
-        this.dtNascimento = LocalDate.parse(dtNascimento.trim());
+    public void setDtNascimento(LocalDate dtNascimento) {
+        this.dtNascimento = LocalDate.parse(dtNascimento.toString());
     }
 
     public Animal(int codigo,
@@ -47,7 +43,7 @@ public class Animal extends AbsIdentificador{
         this.nome = nome;
         this.especie = especie;
         this.raca = raca;
-        setDtNascimento(dtNascimento);
+        this.dtNascimento = LocalDate.parse(dtNascimento);
     }
 
     public Animal(){
