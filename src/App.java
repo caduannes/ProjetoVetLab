@@ -15,6 +15,10 @@ import java.util.ArrayList;
 
 public class App{
     public static void main(String[] args) throws Exception {
+        int totalQts = 0;
+        float totalValor = 0;
+        float totalCusto = 0;
+
         ClienteServico srvCli = new ClienteServico();
         ArrayList<Cliente> clientes = srvCli.browse();
             System.out.println("\n------CLIENTES------");
@@ -79,8 +83,16 @@ public class App{
                 System.out.println("\tCodigo do item: "+ item.getCodigo());
                 System.out.println("\tPreço Unitário: "+ item.getProduto().getPrecoVenda());
                 System.out.println("\tQuantidade: "+ item.getQuantidade());
+                totalQts += item.getQuantidade();
+                totalValor += item.getProduto().getPrecoVenda();
+                totalCusto += item.getProduto().getPrecoCusto();
             }
             System.out.println();
         }
+
+        System.out.println("------CAIXA------");
+        System.out.println("Total de Vendas: " + totalQts);
+        System.out.println("Total Valor Bruto: " + totalValor);
+        System.out.println("Total Lucro: " + (totalValor - totalCusto));
     }
 }
