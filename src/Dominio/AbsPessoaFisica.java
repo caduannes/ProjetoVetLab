@@ -26,5 +26,11 @@ public abstract class AbsPessoaFisica extends AbsIdentificador{
     public AbsPessoaFisica(){
         super();
     }
+    public AbsPessoaFisica(String nome, String cpf, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+    }
+    
 
 }

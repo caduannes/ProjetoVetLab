@@ -26,4 +26,10 @@ public abstract class AbsPessoaJuridica extends AbsIdentificador{
     public AbsPessoaJuridica(){
         super();
     }
+    public AbsPessoaJuridica(String razaoSocial, String nomeFantasia, String cnpj) {
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.cnpj = cnpj;
+    }
+    
 }
