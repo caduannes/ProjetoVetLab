@@ -2,11 +2,14 @@ import Dominio.Animal;
 import Dominio.Cliente;
 import Dominio.Colaborador;
 import Dominio.Fornecedor;
+import Dominio.ItemPedido;
+import Dominio.Pedido;
 import Dominio.Veterinario;
 import Servico.AnimalServico;
 import Servico.ClienteServico;
 import Servico.ColaboradorServico;
 import Servico.FornecedorServico;
+import Servico.PedidoServico;
 import Servico.VeterinarioServico;
 import java.util.ArrayList;
 
@@ -14,7 +17,7 @@ public class App{
     public static void main(String[] args) throws Exception {
         ClienteServico srvCli = new ClienteServico();
         ArrayList<Cliente> clientes = srvCli.browse();
-            System.out.println("Clientes: ");
+            System.out.println("------CLIENTES------");
         for (Cliente cliente : clientes) {
             System.out.println("Codigo: "+ cliente.getCodigo());
             System.out.println("CPF: "+ cliente.getCpf());
@@ -22,7 +25,7 @@ public class App{
         }
         ColaboradorServico srvCol = new ColaboradorServico();
         ArrayList<Colaborador> colaboradores = srvCol.browse();
-            System.out.println("Colaboradores: ");
+            System.out.println("------COLABORADORES------");
         for (Colaborador colaborador : colaboradores) {
             System.out.println("Codigo: "+ colaborador.getCodigo());
             System.out.println("Matricula: "+ colaborador.getMatricula());
@@ -31,7 +34,7 @@ public class App{
         }
         FornecedorServico srvFor = new FornecedorServico();
         ArrayList<Fornecedor> fornecedores = srvFor.browse();
-            System.out.println("Fornecedores: ");
+            System.out.println("------FORNECEDORES------");
         for (Fornecedor fornecedor : fornecedores) {
             System.out.println("Codigo: "+ fornecedor.getCodigo());
             System.out.println("Razão Social: "+ fornecedor.getRazaoSocial());
@@ -40,7 +43,7 @@ public class App{
         }
         AnimalServico srvAni = new AnimalServico();
         ArrayList<Animal> animais = srvAni.browse();
-            System.out.println("Animais: ");
+            System.out.println("------ANIMAIS------");
         for (Animal animal : animais) {
             System.out.println("Codigo: "+ animal.getCodigo());
             System.out.println("Nome: "+ animal.getNome());
@@ -50,12 +53,27 @@ public class App{
         }
         VeterinarioServico srvVet = new VeterinarioServico();
         ArrayList<Veterinario> veterinarios = srvVet.browse();
-            System.out.println("Veterinários: ");
+            System.out.println("------VETERINÁRIOS------");
         for (Veterinario veterinario : veterinarios) {
             System.out.println("Codigo: "+ veterinario.getCodigo());
             System.out.println("Nome: "+ veterinario.getNome());
             System.out.println("RG: "+ veterinario.getRg());
             System.out.println("CRMV: "+ veterinario.getRegCRMV());
+        }
+        PedidoServico srvPed = new PedidoServico();
+        ArrayList<Pedido> pedidos = srvPed.browse();
+            System.out.println("------PEDIDO------");
+        for (Pedido pedido : pedidos) {
+            System.out.println("Codigo: "+ pedido.getCodigo());
+            System.out.println("Número do Pedido: "+ pedido.getNumero());
+            System.out.println("Data do Pedido: "+ pedido.getData());
+            System.out.println("\t------ITENS------");
+            for (ItemPedido item : pedido.getItensPedido()) {
+                System.out.println("\tCodigo do item: "+ item.getCodigo());
+                System.out.println("\tPreço Unitário: "+ item.getProduto().getPrecoVenda());
+                System.out.println("\tQuantidade: "+ item.getQuantidade());
+            }
+            System.out.println();
         }
     }
 }
