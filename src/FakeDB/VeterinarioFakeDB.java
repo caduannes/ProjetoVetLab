@@ -8,7 +8,7 @@ public class VeterinarioFakeDB extends AbsFakeDB<Veterinario> {
 
     @Override
     protected void AutoPreencher() {
-        if(this.instancia ==null){
+        if(this.instancia == null){
             this.instancia = new ArrayList<>();
         }
         this.instancia.add(new Veterinario(1, "Larissa", "1.649.794", "486.918.746-59", "larissa@gmail.com", "948613746982-1"));

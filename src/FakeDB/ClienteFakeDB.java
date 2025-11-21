@@ -7,7 +7,7 @@ public class ClienteFakeDB extends AbsFakeDB<Cliente>{
 
     @Override
     protected void AutoPreencher() {
-        if(this.instancia ==null){
+        if(this.instancia == null){
             this.instancia = new ArrayList<>();
         }
         this.instancia.add(new Cliente(1, "Carlos", "123.456.789-94", "Cadu@gmail.com", "123"));

@@ -24,6 +24,5 @@ public abstract class AbsRepositorio<TDominio> {
 
     public abstract TDominio deleteByInstance(TDominio instancia);
 
-    public AbsRepositorio(){
-    }
+    public AbsRepositorio(){}
 }

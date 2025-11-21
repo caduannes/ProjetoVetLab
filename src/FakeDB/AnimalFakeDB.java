@@ -8,7 +8,7 @@ public class AnimalFakeDB extends AbsFakeDB<Animal>{
 
     @Override
     protected void AutoPreencher() {
-        if(this.instancia ==null){
+        if(this.instancia == null){
             this.instancia = new ArrayList<>();
         }
         this.instancia.add(new Animal(1, "Nega", "Gato", "Preta","2023-01-10"));
